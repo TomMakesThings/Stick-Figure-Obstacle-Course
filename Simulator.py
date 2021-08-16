@@ -6,6 +6,7 @@ backgroundRoot = Tk()
 tableRoot = Tk()
 
 obstacleNumber = 100
+generationSize = 10
 buttonNotClicked = True
 backgroundCanvas = None
 startImage = None
@@ -78,9 +79,9 @@ class Person():
         self.vectorPosition = vectorPosition
 
 class Generation():
-    def __init__(self, Number):
+    def __init__(self, Number, generationSize):
         self.generationNumber = Number #Reference number
-        self.size = 10 #Number of people within generation
+        self.size = generationSize #Number of people within generation
         self.peopleArray = [] #Records people within generation
         self.winningOrder = []
         
@@ -194,7 +195,7 @@ def startSimulation(event): #Runs when start button clicked
     Env = Environment()
     Env.createEnvironment()
     GUIObstacles(Env) #Places obstacles within GUI
-    Gen = Generation(1)
+    Gen = Generation(1, generationSize)
     Gen.createGeneration()
     Env.currentGen = Gen.peopleArray
     personPhotos, personImages = GUIPeople(Env) #Creates generation images
@@ -206,7 +207,7 @@ def startSimulation(event): #Runs when start button clicked
         if ranking[0].vectorPosition[0] > currentChampion.vectorPosition[0]:
             currentChampion = ranking[0]
         generationCount += 1
-        Gen = Generation(generationCount)
+        Gen = Generation(generationCount, generationSize)
         Gen.createGeneration(ranking[0].instinct, ranking[1].instinct, currentChampion.instinct)
         Env.currentGen = Gen.peopleArray
         personPhotos, personImages = GUIPeople(Env)
