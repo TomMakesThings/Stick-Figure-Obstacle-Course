@@ -1,21 +1,62 @@
 <div align="center">
-  <h1>sᴛɪᴄᴋ ғɪɢᴜʀᴇ ɢᴇɴᴇᴛɪᴄ ᴀʟɢᴏʀɪᴛʜᴍ ᴏʙsᴛᴀᴄʟᴇ ᴄᴏᴜʀsᴇ sᴏʟᴠᴇʀ</h1>
+  <h1>Stick Figure Genetic Algorithm Obstacle Course Solver</h1>
   <p><b>NEA computer science project by <a href="https://github.com/TomMakesThings">TomMakesThings</a> - 2017/2018</b></p>
   <br>
 </div>
 
 <h1 align="center">🅐🅑🅞🅤🅣</h1>
   
-<h3>Genetic Algorithms</h3>
-<p>Genetic algorithms were created a method to study the natural phenomenon of adaption in nature. Through constant iteration, they create entities that become optimised at performing a task. As they are inspired by natural selection, they often use techniques of selection, mutation and inheritance. The system always starts with a set or random population of entities which are given scores when the compete against each other in a manner set by the creator. The entity or entities with the highest scores are then used to make a new population produced from their offspring. This offspring will have some characterises from their parents, and some characteristics produced through random mutation. This process will then run either indefinitely or until a suitable solution has been reached.</p>
+<h3>Summary</h3>
+<p>This application runs a custom genetic algorithm that optimises generations of stick figures so that over time they improve at navigating obstacles including spikes, pits, and caves. The code was written in Python 3.5 and GUI displayed using Tkinter.</p>
 
-<h3>About the simulator</h3>
-<p>The simulator creates a set of non-playable stick figures that will navigate their way around obstacles placed within an environment. Obstacles will include spikes, pits, and steps. These stick figures will each have randomly generated attributes such as walk speed, jump height, and distance. Other attributes such as health will remain constant. At first they will move randomly, but over generations will improve at overcoming obstacles.</p>
+<h3>Terminology</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Term</th>
+            <th>Explanation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="left" valign="top">Genetic algorithms</td>
+            <td align="left" valign="top">Heuristic search algorithms that use techniques inspired by natural selection, including selection, mutation and inheritance</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">Generation</td>
+            <td align="left" valign="top">The population of stick figures in each iteration</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">Genotype</td>
+            <td align="left" valign="top">The set of properties, in this case actions, that can be mutated and altered</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">Crossover</td>
+            <td align="left" valign="top">Combining genomes from two stick figures</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">Mutation</td>
+            <td align="left" valign="top">A random change the genotype, such as swapping one attribute for another, addition or deletion</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 align="center">🅓🅔🅢🅘🅖🅝</h1>
+<p>At the start, the initial population of non-playable stick figures are created with the aim that over time their descendants will learn to navigate their way around obstacles placed within the environment. Each is assigned a unique genotype consisting of randomly generated actions including: walk, jump, stand. These are encoded as 'W', 'J' or 'S' retrospectively. The most successful individuals of this population then pass their genotypes to offspring through crossover and mutation.</p>
+
+<p align="center"><img src="https://github.com/TomMakesThings/Stick-Figure-Obstacle-Course/blob/assets/Images/Start.png" width="100%"></p>
+
+<p>At the beginning of each generation, all stick figures start with 100 health. If they collides with an obstacle, they will loose health as follows:</p>
+
+<ul>
+  <li>Walking into a pit causes 100 damage causing that individual's turn to end</li>
+  <li>Walking into a spike causes 25 damage</li>
+  <li>Jumping while walking through a cave causes 5 damage</li>
+</ul>
 
 <p align="center"><sub><b>Flowchart of stick figure life cycle</b></sub></p>
 <p align="center"><img src="https://github.com/TomMakesThings/Stick-Figure-Obstacle-Course/blob/assets/Images/Lifecycle-Flowchart.png" width=600></p>
-
-<p align="center"><img src="https://github.com/TomMakesThings/Stick-Figure-Obstacle-Course/blob/assets/Images/Start.png" width="100%"></p>
   
 <h1 align="center">🅘🅝🅢🅣🅡🅤🅒🅣🅘🅞🅝🅢</h1>
   
