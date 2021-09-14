@@ -12,6 +12,8 @@
 
 <p>This application runs a custom genetic algorithm that optimises generations of stick figures so that over time they improve at navigating obstacles including spikes, pits, and caves. The code was written in Python 3.5 and GUI displayed using Tkinter.</p>
 
+<p align="center"><img src="https://github.com/TomMakesThings/Stick-Figure-Obstacle-Course/blob/assets/Images/Stick-Figure-Run.png"></p>
+
 <h3>Terminology</h3>
 
 <table>
